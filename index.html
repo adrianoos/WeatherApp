@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather app</title>
+<link rel="stylesheet" href="weather.css">
+
+</head>
+<body>
+<main>
+    <section class="weather-info" id="mainContainer">
+        <div id="weatherSearchView" class="weatherInfoSearchView">
+            <label id="label1" class="weatherInfoSearchLabel" for="searchInput">Check Weather for:</label>
+            <input type="text" id="searchInput" placeholder="City">
+            <button id="searchButton">Search</button>
+            <label class="weatherInfoSearchLabel2" for="searchInput">*english names only</label>
+            <div id="cloud1"></div>
+            <div id="cloud2"></div>
+            <div id="cloud3"></div>
+            <div id="droplet1"></div>
+            <div id="droplet2"></div>
+            <div id="droplet3"></div>
+            <div id="droplet4"></div>
+            <div id="droplet5"></div>
+            <div id="sun"></div>
+      
+        </div>
+
+        <div id="weatherForecastView" class="weatherInfoForecastView">
+          
+
+            <div class="weatherInfoCity" id="weatherInfoCityContainer">
+                <h1 id="weatherCity"></h1>
+                <img id="weatherIcon"></h1>
+            
+            </div>
+
+            <div class="weatherInfoTemperatures" id="weatherInfoTemperaturesContainer">
+                <h2 id="weatherCurrentTemp"></h2>
+                <p id="weatherMaxTemp"></p>
+                <p id="weatherminTemp"></p>
+            </div>
+            <button class="weather-info__btn-return" id="returnToSearchBtn">return</button>
+
+        </div>
+            
+    </section>
+</main>
+
+<script type="module" src="modules/main.js"></script>
+
+</body>
+</html>

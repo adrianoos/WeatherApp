@@ -1,0 +1,298 @@
+
+
+body {
+  background-color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+
+main { 
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 102vw; 
+  height: 102vw;
+  background-size: cover;
+  background-position: center;
+ 
+  
+  
+}
+.weather-info { 
+  height: 400px;
+  width: 200px;
+  max-width: 400px;
+  max-height: 200px;
+  min-width: 400px;
+  min-height: 200px;
+  padding: 90px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, rgb(214, 214, 213) 0%, rgba(143, 142, 142, 0.9) 100%); /*gradient effect for background*/
+  transition-duration: .2s; /* transition time for animation*/
+  transition-property: opacity; /* transition type*/
+  overflow: hidden;
+ 
+}
+.weatherInfoSearchView {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;  
+}
+
+#weatherIcon {
+height: 200px;
+width: 200px;
+
+}
+.weatherInfoSearchLabel {
+font-size: 35px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+text-shadow: 5px 5px 5px rgb(141, 141, 140);
+object-fit: cover;
+
+}
+.weatherInfoSearchLabel2 {
+  top: 170px;
+  font-size: 22px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-shadow: 5px 5px 5px rgb(141, 141, 140);
+  }
+.weatherInfoSearchView input {
+  padding: 10px 50px;
+  margin-bottom: 20px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: x-large;
+  box-shadow: 5px 5px 5px rgb(141, 141, 140);
+}
+
+::-webkit-input-placeholder {
+color: rgb(66, 65, 65);
+}
+
+.weatherInfoSearchView button {
+  border: 2px solid rgb(7, 7, 7);
+  padding: 10px 50px;
+  margin-bottom: 10px;
+  font-size: 23px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background: linear-gradient(1deg, rgb(128, 128, 128) 0%, rgba(220, 228, 214, 0.9) 60%);
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgb(141, 141, 140);
+}
+.weatherInfoForecastView { 
+  position:absolute;
+  display: none; 
+  align-items: flex-end; 
+  height: 200px;
+  flex-direction: column; 
+  justify-content: space-around; 
+  text-shadow: 5px 5px 5px rgb(141, 141, 140);
+  
+}
+.weatherInfoTemperatures {
+  position:absolute;
+  top: 80px;
+  left: -45px;
+  width: 500px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  flex-direction: column;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding-bottom: 45px;
+  text-shadow: 5px 5px 5px rgb(141, 141, 140);
+}
+
+.weatherInfoCity { 
+  position:absolute;
+  left: -50px;
+  top: -30px;
+  width: 500px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: xx-large;
+  padding-bottom: 25px;
+}
+
+.weather-info__btn-return {
+  position:absolute;
+  top: 180px;
+  left: 260px;
+  border: 2px solid rgb(7, 7, 7);
+  padding: 10px 50px;
+  font-size: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: rgb(125, 131, 122);
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgb(141, 141, 140) ;
+}
+
+#cloud1 {
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  top: -110px;
+  left: 398px;
+  border-radius: 80%;
+  background-color:rgb(65, 64, 64);
+  
+}
+#cloud2 {
+  position:absolute;
+  width: 80px;
+  height: 90px;
+  top: -140px;
+  left: 300px;
+  border-radius: 80%;
+  background-color:rgb(65, 64, 64);
+  z-index: 2;
+  
+}
+#cloud3 {
+  position:absolute;
+  width: 120px;
+  height: 90px;
+  top: -150px;
+  left: 310px;
+  border-radius: 80%;
+  background-color:rgb(34, 34, 34);
+  z-index: 3;
+  
+}
+
+#droplet1 {
+  width: 10px;
+  height: 10px;
+  border-radius: 80%;
+  position:absolute;
+  top:-80px;
+  left: 400px;
+  background-color:rgb(104, 104, 104);
+  animation: drop1 2.4s;
+  animation-iteration-count:infinite;
+}
+@keyframes drop1 {
+  0%{opacity: 0.2}
+  65%{transform: translateY(8px);
+  opacity: 1;}
+  100%{transform: translateY(340px);
+  opacity: 0;}
+}
+#droplet2 {
+  width: 10px;
+  height: 10px;
+  border-radius: 80%;
+  position:absolute;
+  top:-80px;
+  left: 389px;
+  background-color:rgb(104, 104, 104);
+  animation: drop2 2.8s; 
+  animation-iteration-count:infinite;
+}
+@keyframes drop2 {
+  0%{opacity: 0.4} /*state of opacity at 0% of animation length*/
+  30%{transform: translateY(30px);
+  opacity: 1;}
+  100%{transform: translateY(340px);
+  opacity: 0;}
+}
+#droplet3 {
+  width: 10px;
+  height: 10px;
+  border-radius: 80%;
+  position:absolute;
+  top:-80px;
+  left: 300px;
+  background-color:rgb(104, 104, 104);
+  animation: drop3 2.2s;
+  animation-iteration-count:infinite;
+}
+@keyframes drop3 {
+  0%{opacity: 0.8}
+  20%{transform: translateY(17px);
+  opacity: 1;}
+  100%{transform: translateY(340px);
+  opacity:0;}
+}
+#droplet4 {
+  width: 10px;
+  height: 10px;
+  border-radius: 80%;
+  position:absolute;
+  top:-800px;
+  left: 380px;
+  background-color:rgb(104, 104, 104);
+  animation: drop4 1.5s; /* animation duration*/
+  animation-iteration-count:infinite;
+}
+@keyframes drop4 {
+  0%{transform: translateY(0px)} 
+  80%{
+    transform: translateY(20px);
+    opacity: 1;} 
+  100%{transform: translateY(340px);
+  opacity: 0;}
+}
+#droplet5 {
+  width: 10px;
+  height: 10px;
+  border-radius: 80%;
+  position:absolute;
+  top:-80px;
+  left: 429px;
+  background-color:rgb(63, 63, 63);
+  animation: drop5 2s; 
+  animation-iteration-count:infinite; 
+  mix-blend-mode: overlay;
+}
+@keyframes drop5 {
+  0%{transform: translateY(0px);
+  opacity:1;} 
+  20%{
+    transform: translateY(20px);
+    opacity: 1;} 
+  100%{transform: translateY(340px);
+  opacity: 0;}
+}
+#sun {
+  position:absolute;
+  top: -100px;
+  left: -100px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgb(237, 253, 6);
+  transform: scale(1);
+  animation: pulse-back 10s infinite;
+  mix-blend-mode: overlay;
+ 
+}
+@keyframes pulse-back {
+  0% {
+    transform: scale(1);
+    background-color:  rgb(237, 253, 6);
+    border-color: rgb(237, 253, 6) ;
+    border-style: solid;
+  }
+  50% { animation: pulse-back 5s infinite;
+    transform: scale(1.1);
+    background-color:  rgb(253, 187, 6);
+    border-color: rgb(184, 61, 4) ;
+    border-style: solid;
+  }
+  100% {
+    transform: scale(1);
+    background-color:  rgb(237, 253, 6);
+    border-color: rgb(237, 253, 6) ;
+    border-style: solid;
+  }
+}
+  
