@@ -4,10 +4,7 @@ export const getWeatherByCity = city => { // fetching data by city name answer f
         {
               method: "POST",
  headers: [
-  ['Content-Type', 'application/csp-report'],
-  ['Content-Type', 'application/expect-ct-report+json'],
-  ['Content-Type', 'application/xss-auditor-report'],
-  ['Content-Type', 'application/ocsp-request'],
+  ['Content-Type', 'text/plain'],
 ],
   credentials: "include",
   body: JSON.stringify(exerciseForTheReader)
