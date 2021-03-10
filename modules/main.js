@@ -24,10 +24,10 @@ setupListeners = () => { // Listeners setup
         this.viewElems.returnToSearchBtn.addEventListener('click', this.returnToSearch);
     };
 
-    handleSubmit = () => { // Submit action 
-        if (event.type === 'click' || event.key === 'Enter') {
+    handleSubmit = () => {
+        let query = this.viewElems.searchInput.value; 
+        if (query !== "" && event.type === 'click' || event.key === 'Enter') {
           this.fadeInOut();
-          let query = this.viewElems.searchInput.value; 
           getWeatherByCity(query).then(data => { 
             this.displayWeatherData(data);
             this.viewElems.searchInput.style.borderColor = 'black';
@@ -45,53 +45,48 @@ revLabelText = () => {this.viewElems.label1.innerText = 'Check Weather For: '};
 clearSearchInput = () => {this.viewElems.searchInput.value = ''};
 
 fadeInOut = () => {
-        if (this.viewElems.mainContainer.style.opacity === '1' ||this.viewElems.mainContainer.style.opacity === '') { // jeśli opacity mainContainera jest 1 lub puste (widoczny)
+        if (this.viewElems.mainContainer.style.opacity === '1' ||this.viewElems.mainContainer.style.opacity === '') {
             this.viewElems.mainContainer.style.opacity = '0';
                 } else {
                     this.viewElems.mainContainer.style.opacity = '1';
                 }
     };
-    switchView = () => { // Switching view for data display
+    switchView = () => { 
         if (this.viewElems.weatherSearchView.style.display !== 'none') { 
             this.viewElems.weatherSearchView.style.display = 'none' 
             this.viewElems.weatherForecastView.style.display = 'flex' 
-        } else { // w innym przypadku 
+        } else {
             this.viewElems.weatherForecastView.style.display = 'none' 
            this.viewElems.weatherSearchView.style.display = 'flex' 
         }
         };
 
-        returnToSearch = () => { // return button action
-            this.fadeInOut() // zmień przeźroczystość
-        
-            setTimeout(() => { // wykonaj po czasie
+        returnToSearch = () => { 
+            this.fadeInOut() 
+            setTimeout(() => {
                 this.switchView()
                 this.fadeInOut()
             }, 500);
             setTimeout(this.clearSearchInput, 1000)
         };
         
-    displayWeatherData = data => { // display weather data 
+    displayWeatherData = data => {
         this.switchView();
         this.fadeInOut();
-            
-        const weather = data.consolidated_weather[0]; 
-    
-        this.viewElems.weatherCity.innerText = data.title; 
-        this.viewElems.weatherIcon.src = `https://www.metaweather.com/static/img/weather/${weather.weather_state_abbr}.svg`;
-        this.viewElems.weatherIcon.alt = weather.weather_state_name;
-        
-        const currTemp = weather.the_temp.toFixed(2);
-        const maxTemp = weather.max_temp.toFixed(2);
-        const minTemp = weather.min_temp.toFixed(2);
-        
+        const icoCode = data.weather[0].icon
+        const weather = data.main; 
+        this.viewElems.weatherCity.innerText = data.name; 
+        this.viewElems.country.innerText = data.sys.country; 
+        this.viewElems.description.innerText = "Description: " + data.weather[0].main; 
+        this.viewElems.weatherIcon.src = `http://openweathermap.org/img/w/${icoCode}.png`;
+        const currTemp = (data.main.temp - 273).toFixed(2);
+        const maxTemp = (data.main.temp_max - 273).toFixed(2);
+        const minTemp = (data.main.temp_min - 273).toFixed(2);
         this.viewElems.weatherCurrentTemp.innerText = `Current Temperature: ${currTemp} °C`
         this.viewElems.weatherMaxTemp.innerText = `Max Temperature: ${maxTemp} °C`
         this.viewElems.weatherminTemp.innerText = `Min Temperature: ${minTemp} °C`
-        
-        }
-
-}
+        };
+};
 
 document.addEventListener('DOMContentLoaded', new WeatherApp());
 
