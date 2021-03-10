@@ -1,7 +1,9 @@
 live version -> https://adrianoos.github.io/WeatherApp/
 
-Aplication api provides data only for biggest cities of the world 
+New better API with data for most cities of the world.
 
-upgrades that i add in aplication:
-- information and functionality for situation when aplication could not find data for searched city
-- CSS animated elements on main view
+One of my first apps with clean JS,HTML and CSS.
+- practice playground for data fetching and css animations
+
+
+
