@@ -14,9 +14,6 @@ main {
   height: 102vw;
   background-size: cover;
   background-position: center;
- 
-  
-  
 }
 .weather-info { 
   height: 400px;
@@ -110,8 +107,8 @@ color: rgb(66, 65, 65);
 
 .weatherInfoCity { 
   position:absolute;
-  left: -50px;
-  top: -30px;
+  left: -40px;
+  top: -70px;
   width: 500px;
   height: 70px;
   display: flex;
@@ -120,6 +117,22 @@ color: rgb(66, 65, 65);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: xx-large;
   padding-bottom: 25px;
+}
+
+
+#description{
+  position:absolute;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  top: 20px;
+  left: -40px;
+  width: 200px;
+}
+
+#country{
+  position: absolute;
+  top: 55%;
+  left: 1%;
+  font-size: large;
 }
 
 .weather-info__btn-return {
