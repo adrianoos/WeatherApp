@@ -31,6 +31,7 @@ setupListeners = () => { // Listeners setup
           getWeatherByCity(query).then(data => { 
             this.displayWeatherData(data);
             this.viewElems.searchInput.style.borderColor = 'black';
+              console.log(data);
           }).catch(() => { 
             this.fadeInOut();
         this.changeLabelText();
