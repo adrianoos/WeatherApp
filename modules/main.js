@@ -73,7 +73,25 @@ fadeInOut = () => {
     displayWeatherData = data => {
         this.switchView();
         this.fadeInOut();
-        console.log(data)
+        let windDirection = data.wind.deg
+        let calcWindDir;
+        if ( 337.5 < windDirection <   22.5 ) {
+            calcWindDir = "South"
+        } else if ( 22.5 < windDirection < 67.5 ) {
+            calcWindDir = "South-West"
+        } else if ( 67.5 < windDirection < 112.5) {
+            calcWindDir = "West"
+        } else if ( 112.5 < windDirection < 157.5) {
+            calcWindDir = "North-West"
+        } else if ( 157.5 < windDirection < 202.5) {
+            calcWindDir = "North"
+        } else if ( 202.5 < windDirection< 247.5) {
+            calcWindDir = "North-East"
+        } else if ( 247.5 < windDirection < 292.5 ) {
+            calcWindDir = "East"
+        } else if ( 292.5 < windDirection < 337.5) {
+            calcWindDir = "South-East"
+        }
         const icoCode = data.weather[0].icon
         const weather = data.main; 
         this.viewElems.weatherCity.innerText = data.name; 
