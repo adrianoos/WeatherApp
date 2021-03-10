@@ -124,7 +124,7 @@ color: rgb(66, 65, 65);
   position:absolute;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   top: 20px;
-  left: -40px;
+  left: -45px;
   width: 200px;
 }
 
@@ -133,6 +133,13 @@ color: rgb(66, 65, 65);
   top: 55%;
   left: 1%;
   font-size: large;
+}
+#windspeed{
+  position: absolute;
+  top: 50px;
+  left:-45px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 200px;
 }
 
 .weather-info__btn-return {
