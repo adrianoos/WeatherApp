@@ -1,21 +1,7 @@
-export const getWeatherByCity = city => { // fetching data by city name answer from API is ID of city
+export const getWeatherByCity = city => {
+    const APIkey = 'f4595a28632c170d38edc5066fd9f2bd'
     return fetch(
-        `https://www.metaweather.com/api/location/search/?query=${city}` ,
-        {
-              method: "POST",
- headers: [
-  ['Content-Type', 'text/plain'],
-],
-  credentials: "include",
-  body: JSON.stringify(exerciseForTheReader)
-        }
+       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`
     )
     .then(resp => resp.json())
-    .then(data => { 
-        const woeid = data[0].woeid;
-        return fetch(
-            `https://www.metaweather.com/api/location/${woeid}/` // getting weather data by City ID
-        ).then(resp => resp.json()).then(data => data) 
-    })
     };
- 
