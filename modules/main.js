@@ -96,7 +96,7 @@ fadeInOut = () => {
         const weather = data.main; 
         this.viewElems.weatherCity.innerText = data.name; 
         this.viewElems.country.innerText = data.sys.country;
-        this.viewElems.windspeed.innerText = "Wind speed: " + data.wind.speed + "Kmh"; 
+        this.viewElems.windspeed.innerText = "Wind speed: " + data.wind.speed + "Kmh" + " from: " + calcWindDir; 
         this.viewElems.description.innerText = "Description: " + data.weather[0].main; 
         this.viewElems.weatherIcon.src = `http://openweathermap.org/img/w/${icoCode}.png`;
         const currTemp = (data.main.temp - 273).toFixed(2);
